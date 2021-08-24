@@ -1,0 +1,20 @@
+mainform: có gộp được không? có 
+nhau, có những section khác nhau với permission khác nhau, remove btn .. trên view và move vào form (do chỉ sử dụng trên 1 bản ghi), đổi tên button
+form master : form InputScreen_WorkAddress get từ bd khác, InputScreen_ProfileTempSettings gộp 2 form
+mục đích của các form
+
+WorkAddress:  thiết lập thông tin người trong bộ phận Planning Department 
+PopupHelp: để setting popup help 
+TantoEntry: thiết lập pic cho từng phòng ban
+WordingDoc: màn hình thiết lập eamil template tương ứng cho từng trạng thái của bản ghi chính
+UserManual: thiết lập hướng dẫ sử dụng
+ProfileTempSettings : ProfileRsrch & TempForm: qly thời ky nhập liệu của các giai đoạn đăng ký và setting template nội dung review
+MainDoc_C: Màn hình này dùng để đề xuất kế hoạch nghiên cứu, số tiền thực hiện và bổ sung các kết quả sau khi đã đưa đề án vào thực thi 
+(Form này dùng chung cho tất cả các đề tài nghiên cứu)
+MainDoc_R: Màn hình này dùng để đề xuất kế hoạch nghiên cứu, số tiền thực hiện và bổ sung các kết quả sau khi đã đưa đề án vào thực thi 
+(Form này chỉ được dùng cho mục đích nghiên cứu cải tiến kỹ thuật sản xuất)
+có 2 form in, khi click btn in trên 2 form chính thì sẽ hiển thị form in tương ứng
+
+view: rất nhiều view và có 1 lưu ý là "Giữ các column lấy giá trị hiển thị từ field không tồn tại ở trên input screen"
+
+có những điểm gì đặc biệt
