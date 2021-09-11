@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dbt-tutorial
+    database: dbt-tutorial
+    # Schema / dataset level
+    schema: stripe
+    # documentation on source level
+    description: DBT Tutorial
+    tables:
+      - name: payment

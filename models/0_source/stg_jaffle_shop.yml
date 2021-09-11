@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: dbt-tutorial
+    database: dbt-tutorial
+    # Schema / dataset level
+    schema: jaffle_shop
+    # documentation on source level
+    description: DBT Tutorial
+    tables:
+      - name: customers
+        columns:
+        - name: id
+      - name: orders
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
+        columns:
+          - name: id
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        description: primarykey
+        tests:
+          - unique
+          - not_null
+  - name: stg_orders
+    columns:
+      - name: status
+        description: "{{ doc('order_status') }}"
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - placed
+                - return_pending
+
+      - name: customer_id
+        description: Foreign key to stg_customers
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id

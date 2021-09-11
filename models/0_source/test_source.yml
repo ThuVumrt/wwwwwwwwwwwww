@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: test_source
+    # Schema / dataset level
+    schema: dbt_Test_Source
+    # documentation on source level
+    description: Test Source
+    tables:
+      - name: Users
